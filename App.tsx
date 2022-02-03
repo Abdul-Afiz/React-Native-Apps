@@ -1,5 +1,6 @@
-import { View, Text, StatusBar, Platform } from "react-native";
-import ViewImageScreen from "./app/src/screens/view-image-screen";
+import { View, StatusBar, Platform } from "react-native";
+import AppButton from "./app/src/atoms/AppButton";
+import WelcomeScreen from "./app/src/screens/welcome-screen";
 
 const App = () => {
   return (
@@ -9,7 +10,7 @@ const App = () => {
         flex: 1,
       }}
     >
-      <ViewImageScreen />
+      <WelcomeScreen />
     </View>
   );
 };

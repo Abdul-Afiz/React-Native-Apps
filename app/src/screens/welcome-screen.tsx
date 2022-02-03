@@ -1,23 +1,29 @@
 import { Image, ImageBackground, View, Text, StyleSheet } from "react-native";
+import AppButton from "../atoms/AppButton";
+import AppText from "../atoms/AppText";
+import Box from "../atoms/Box";
 
 const WelcomeScreen = () => {
   return (
     <ImageBackground
       source={require("../../assets/background.jpg")}
+      blurRadius={10}
       style={styles.bg}
     >
-      <View style={styles.headerLogo}>
+      <Box items="center" pt={70}>
         <Image
           source={require("../../assets/logo-red.png")}
           style={styles.logo}
         />
-        <Text>Sell What You Dont Need</Text>
-      </View>
+        <AppText color="black" fontSize={25} fw="600" pv={20}>
+          Sell What You Dont Need
+        </AppText>
+      </Box>
 
-      <View>
-        <View style={[styles.btn, styles.login]}></View>
-        <View style={[styles.btn, styles.signUp]}></View>
-      </View>
+      <Box width="100%" pr={20} pl={20}>
+        <AppButton title="login" mb={10} />
+        <AppButton title="register" bg="secondary" mb={10} />
+      </Box>
     </ImageBackground>
   );
 };
@@ -30,20 +36,6 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100,
-  },
-  headerLogo: {
-    alignItems: "center",
-    paddingTop: 70,
-  },
-  btn: {
-    width: "100%",
-    height: 70,
-  },
-  login: {
-    backgroundColor: "#fc5c65",
-  },
-  signUp: {
-    backgroundColor: "#4ecdc4",
   },
 });
 
