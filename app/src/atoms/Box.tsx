@@ -35,6 +35,12 @@ const Box = styled.View<{
         ? "black"
         : bgColor === "white"
         ? "white"
+        : bgColor === "medium"
+        ? "medium"
+        : bgColor === "light"
+        ? "light"
+        : bgColor === "danger"
+        ? "danger"
         : "transparent"
     ]};
 
