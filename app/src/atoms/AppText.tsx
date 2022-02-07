@@ -8,11 +8,14 @@ const AppText = styled.Text<{
   fontSize?: number;
   fw?: string;
   capital?: boolean;
+  mh?: number;
+  mv?: number;
   mt?: number;
   mb?: number;
   mr?: number;
   ml?: number;
   pv?: number;
+  ph?: number;
 }>`
   font-family: ${Platform.OS === "android" ? "Roboto" : "Avenir"};
   font-size: ${({ fontSize }) => fontSize || 18}px;
@@ -26,6 +29,8 @@ const AppText = styled.Text<{
         ? "secondary"
         : color === "black"
         ? "black"
+        : color === "medium"
+        ? "medium"
         : "white"
     ]};
 
@@ -49,10 +54,26 @@ const AppText = styled.Text<{
     css`
       margin-left: ${ml}px;
     `}
-                ${({ pv }) =>
+       ${({ mh }) =>
+    mh &&
+    css`
+      margin-horizontal: ${mh}px;
+    `}
+
+         ${({ mv }) =>
+    mv &&
+    css`
+      margin-vertical: ${mv}px;
+    `}
+       ${({ pv }) =>
     pv &&
     css`
       padding-vertical: ${pv}px;
+    `}
+         ${({ ph }) =>
+    ph &&
+    css`
+      padding-vertical: ${ph}px;
     `}
 `;
 

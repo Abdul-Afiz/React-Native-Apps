@@ -1,50 +1,28 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import Box from "../atoms/Box";
 
-import colors from "../../config/colors";
+import { AppImg } from "../atoms/ImgBg";
+
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const ViewImageScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.top}>
-        <View style={[styles.btn, styles.close]}></View>
-        <View style={[styles.btn, styles.delete]}></View>
-      </View>
-      <Image
+    <Box flex={1} bgColor="black" pt={40}>
+      <Box fd="row" justify="space-between" ph={30} width="100%">
+        <MaterialCommunityIcons name="close" color="white" size={35} />
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color="white"
+          size={35}
+        />
+      </Box>
+      <AppImg
         source={require("../../assets/chair.jpg")}
-        style={styles.viewImage}
+        imgheight="100%"
+        imgwidth="100%"
+        resizeMode="contain"
       />
-    </View>
+    </Box>
   );
 };
 
 export default ViewImageScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.black,
-    paddingTop: 40,
-  },
-  top: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingRight: 30,
-    paddingLeft: 30,
-  },
-  btn: {
-    width: 50,
-    height: 50,
-  },
-  close: {
-    backgroundColor: colors.primary,
-  },
-  delete: {
-    backgroundColor: colors.secondary,
-  },
-  viewImage: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "contain",
-  },
-});
