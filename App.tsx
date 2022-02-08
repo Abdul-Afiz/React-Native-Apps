@@ -1,3 +1,5 @@
+import "react-native-gesture-handler";
+
 import { View, StatusBar, Platform } from "react-native";
 import AppButton from "./app/src/atoms/AppButton";
 import WelcomeScreen from "./app/src/screens/welcome-screen";
