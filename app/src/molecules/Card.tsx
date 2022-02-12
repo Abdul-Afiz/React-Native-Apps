@@ -12,7 +12,7 @@ type cardProps = {
 
 const Card = ({ img, title, price }: cardProps) => {
   return (
-    <Box br={15} overflow>
+    <Box br={15} overflow bgColor="white" mv={20}>
       <AppImg source={img} imgwidth="100%" imgheight="200px" />
       <Box pv={20} ph={20}>
         <AppText color="black" mb={7}>

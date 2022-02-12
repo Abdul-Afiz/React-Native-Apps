@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components/native";
 import Constants from "expo-constants";
+import colors from "../../config/colors";
 
 const Container = styled.SafeAreaView<{
   flex?: number;
@@ -15,7 +16,26 @@ const Container = styled.SafeAreaView<{
   pv?: number;
   mh?: number;
   mv?: number;
+  bgColor?: string;
 }>`
+  background-color: ${({ bgColor }) =>
+    colors[
+      bgColor === "primary"
+        ? "primary"
+        : bgColor === "secondary"
+        ? "secondary"
+        : bgColor === "black"
+        ? "black"
+        : bgColor === "white"
+        ? "white"
+        : bgColor === "medium"
+        ? "medium"
+        : bgColor === "light"
+        ? "light"
+        : bgColor === "danger"
+        ? "danger"
+        : "transparent"
+    ]};
   padding-top: ${Constants.statusBarHeight}px
     ${({ flex }) =>
       flex &&
@@ -85,6 +105,7 @@ const Container = styled.SafeAreaView<{
 `;
 
 type screenProps = {
+  bg?: string;
   flex?: number;
   mt?: number;
   mb?: number;
@@ -115,6 +136,7 @@ const ScreenContainer = ({
   pv,
   mh,
   mv,
+  bg,
   children,
 }: screenProps) => {
   return (
@@ -132,6 +154,7 @@ const ScreenContainer = ({
       pv={pv}
       mh={mh}
       mv={mv}
+      bgColor={bg}
     >
       {children}
     </Container>
