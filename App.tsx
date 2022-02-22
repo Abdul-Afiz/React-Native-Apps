@@ -9,9 +9,14 @@ import Icon from "./app/src/atoms/Icon";
 import ListItem from "./app/src/molecules/ListItem";
 import AccountScreen from "./app/src/screens/AccountScreen";
 import ListingsScreen from "./app/src/screens/ListingsScreen";
+import AppTextInput from "./app/src/atoms/AppTextInput";
 
 const App = () => {
-  return <ListingsScreen />;
+  return (
+    <ScreenContainer flex={1}>
+      <AppTextInput placeholder="Username" icon="email" />
+    </ScreenContainer>
+  );
 };
 
 export default App;

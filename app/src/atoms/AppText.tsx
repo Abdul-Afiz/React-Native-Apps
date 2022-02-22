@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components/native";
-import { Platform } from "react-native";
 
-import colors from "../../config/colors";
+import defaultStyle from "../../../styled";
 
 const AppText = styled.Text<{
   color?: string;
@@ -17,12 +16,12 @@ const AppText = styled.Text<{
   pv?: number;
   ph?: number;
 }>`
-  font-family: ${Platform.OS === "android" ? "Roboto" : "Avenir"};
+  ${defaultStyle.text}
   font-size: ${({ fontSize }) => fontSize || 18}px;
   font-weight: ${({ fw }) => fw || "normal"};
   text-transform: ${({ capital }) => (capital ? "uppercase" : "none")};
   color: ${({ color }) =>
-    colors[
+    defaultStyle.colors[
       color === "primary"
         ? "primary"
         : color === "secondary"
