@@ -10,10 +10,28 @@ import ListItem from "./app/src/molecules/ListItem";
 import AccountScreen from "./app/src/screens/AccountScreen";
 import ListingsScreen from "./app/src/screens/ListingsScreen";
 import AppTextInput from "./app/src/atoms/AppTextInput";
+import AppPicker from "./app/src/atoms/AppPicker";
+import { SetStateAction, useState } from "react";
 
+const categories = [
+  { label: "Furniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Cameras", value: 3 },
+];
 const App = () => {
+  const [category, setCategory] = useState<{ label: string; value: number }>(
+    categories[0]
+  );
+
   return (
     <ScreenContainer flex={1}>
+      <AppPicker
+        placeholder="Category"
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+        items={categories}
+        icon="apps"
+      />
       <AppTextInput placeholder="Username" icon="email" />
     </ScreenContainer>
   );

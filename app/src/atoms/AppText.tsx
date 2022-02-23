@@ -3,6 +3,7 @@ import styled, { css } from "styled-components/native";
 import defaultStyle from "../../../styled";
 
 const AppText = styled.Text<{
+  flex?: number;
   color?: string;
   fontSize?: number;
   fw?: string;
@@ -30,8 +31,16 @@ const AppText = styled.Text<{
         ? "black"
         : color === "medium"
         ? "medium"
+        : color === "dark"
+        ? "dark"
         : "white"
     ]};
+
+  ${({ flex }) =>
+    flex &&
+    css`
+      flex: ${flex};
+    `}
 
   ${({ mt }) =>
     mt &&
