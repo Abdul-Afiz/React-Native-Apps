@@ -25,6 +25,8 @@ const AppText = styled.Text<{
     defaultStyle.colors[
       color === "primary"
         ? "primary"
+        : color === "red"
+        ? "red"
         : color === "secondary"
         ? "secondary"
         : color === "black"

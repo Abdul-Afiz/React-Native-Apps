@@ -79,6 +79,7 @@ export const AppImgBg = styled.ImageBackground<{
 `;
 
 export const AppImg = styled.Image<{
+  aself?: string;
   imgheight?: string;
   imgwidth?: string;
   mt?: number;
@@ -91,6 +92,12 @@ export const AppImg = styled.Image<{
   pl?: number;
   br?: number;
 }>`
+  ${({ aself }) =>
+    aself &&
+    css`
+      align-self: ${aself};
+    `}
+
   ${({ imgheight }) =>
     imgheight &&
     css`

@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { materialIconProps, inputProps } from "../utils/types";
+import { inputProps } from "../utils/types";
 import defaultStyle from "../../../styled";
 
 const InputWrapper = styled.View`
@@ -16,14 +16,10 @@ const InputWrapper = styled.View`
 const Input = styled.TextInput`
   ${defaultStyle.text}
   margin-left: 10px;
+  flex: 1;
 `;
 
-type textInputProps = {
-  icon?: materialIconProps;
-  placeholder?: inputProps;
-};
-
-const AppTextInput = ({ icon, ...otherProps }: textInputProps) => {
+const AppTextInput = ({ icon, ...otherProps }: inputProps) => {
   return (
     <InputWrapper>
       {icon && (

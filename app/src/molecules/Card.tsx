@@ -1,14 +1,7 @@
-import { View, Text } from "react-native";
-import React from "react";
 import Box from "../atoms/Box";
 import { AppImg } from "../atoms/ImgBg";
 import AppText from "../atoms/AppText";
-
-type cardProps = {
-  img?: any;
-  title?: string;
-  price?: string;
-};
+import { cardProps } from "../utils/types";
 
 const Card = ({ img, title, price }: cardProps) => {
   return (

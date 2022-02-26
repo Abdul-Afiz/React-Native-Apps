@@ -1,6 +1,5 @@
 import React from "react";
 import ScreenContainer from "../organisms/screen-container";
-import AppText from "../atoms/AppText";
 import ListItem from "../molecules/ListItem";
 import Box from "../atoms/Box";
 import { FlatList } from "react-native";
